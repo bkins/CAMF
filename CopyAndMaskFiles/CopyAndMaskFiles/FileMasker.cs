@@ -89,13 +89,22 @@ public static class FileMasker
                  .ToList()
                  .ForEach(fakeRow =>
                  {
-                     if (row[realSsnColumnName] == fakeRow[realSsnColumnName])
+                     if (row[realSsnColumnName].ToString() == fakeRow[realSsnColumnName].ToString())
                      {
-                         foreach (var field in fieldsToMask.Keys)
+                         foreach(var field in row.Table.Columns)
                          {
-                             row[field] = fakeRow[field];
-                             ConsoleLog.WriteLine($"{row[field]} masked to {fakeRow[field]}");
+                            var fieldName = field.ToString();
+
+                            if(fieldsToMask.Keys.Contains(fieldName))
+                             {
+                                 if(row[fieldName].ToString().Trim() == fakeRow[fieldName].ToString().Trim())
+                                     continue;
+
+                                 ConsoleLog.WriteLine($"{row[fieldName]} masked to {fakeRow[fieldName]}");
+                                 row[fieldName] = fakeRow[fieldName];
+                             }
                          }
+
                          
                      }
 

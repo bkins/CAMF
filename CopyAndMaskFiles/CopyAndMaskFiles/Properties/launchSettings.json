@@ -2,7 +2,7 @@
   "profiles": {
     "CopyAndMaskFiles": {
       "commandName": "Project",
-      "commandLineArgs": "\"C:\\tmp\\Test Data\" \"C:\\tmp\\Test Destination\" \"New Social Security Number\" \"Person Last Name|0,person first name|0,person middle name|0,residence address line 1|0,residence address line 2|0,Residence Address Line One Text|0,Residence Address City Name|0,Residence Address Line Two Text|0\" \".person.dat|.job.dat\" \"on on\" \"F\""
+      "commandLineArgs": "\"C:\\Temp\\CAMF Testing\\source\" \"C:\\Temp\\CAMF Testing\\destination\" \"New Social Security Number\" \"Person Last Name|0,person first name|0,person middle name|0,residence address line 1|0,residence address line 2|0,Residence Address Line One Text|0,Residence Address City Name|0,Residence Address Line Two Text|0\" \".person.dat|.job.dat\" \"on on\" \"F\""
     }
   }
 }
